@@ -3,14 +3,12 @@ if(isset($_GET['input']) && $_GET['input'] != "")
 {
     echo "<br />Your Search Results Google:<br /><br />";
     $query = urlencode($_GET['input']);
-    $cx = "001186922872885026417:9ptvru9qau8";
-    $key = "AIzaSyB8iJub21LJvWSQcMNLLzkyS92XxD9lheQ";
+    $cx = "001186922872885026417:9ptvru9qau8"; //aggiunto dall'utente
+    $key = "AIzaSyB8iJub21LJvWSQcMNLLzkyS92XxD9lheQ"; //aggiunto dall'utente
 
-    $numero=7;
+    $numero=7; //ottengo dall'utente
     $decine=floor($numero/10);
     $unita=$numero%10;
-
-
 
 
     function stampa_risultati($q, $chiave, $idse, $start, $limite) {
@@ -34,8 +32,5 @@ if(isset($_GET['input']) && $_GET['input'] != "")
     }
 
     stampa_risultati($query, $key, $cx, 10*$x, $unita);
-
-
-//}
 }
 ?>
