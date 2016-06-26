@@ -1,0 +1,43 @@
+.txtBox {
+	margin: 15px 5px;
+	height: 40px;
+	font-size: 25px;
+	border-radius:30px;
+	border: 1px solid grey;
+	padding-left:10px;
+}
+
+h1 {
+	color: black;
+}
+
+#query {
+	text-align: center;
+	width:70%;
+}
+
+
+#btnSubmit {
+	color: black;
+	width: 200px;
+	height: 50px;
+    background-color: #e7e7e7; /* Green */
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+#btnSubmit:hover {
+	background-color: #36B8E9;
+    color: white;
+}
+
+#box {
+	margin-top: 100px;
+}

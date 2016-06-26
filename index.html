@@ -1,28 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Google Search PHP API</title>
+	<title>Search</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+<center>
+<div id="box">
+<h1>Search:</h1>
 <form method="GET" action="search.php">
-<input type="text" placeholder="SE Key" value="001186922872885026417:9ptvru9qau8"  name="sekey" required="required" />
+<input class="txtBox" id="query" type="text" placeholder="Funny cat videos..." name="input" required="required" />
+<input class="txtBox" type="number" name="numero" min="1" max="50" step="1" value="5">
 <br />
-<input type="text" placeholder="GAPI Key" value="AIzaSyB8iJub21LJvWSQcMNLLzkyS92XxD9lheQ" name="gapikey" required="required" />
+<input type="checkbox" name="emails" value="emails"/>Retrieve email addresses</input>
 <br />
-<input type="text" placeholder="MHAPI Key" value="4b7444747fde2d24acaa34daf62cf1d1c53161fa" name="mhapikey" required="required" />
 <br />
-<input type="text" name="numero" value="10">
-<br />
-<input type="text" placeholder="query" name="input" />
-<br />
-<input type="submit" />
+<input id="btnSubmit" type="submit" />
 
-<input id="ciao" type="button" onclick="myFunction(this.id)" />
 </form>
+</div>
+</center>
 </body>
-<script>
-function myFunction(ele) {
-    alert(ele);
-}
-</script>
 </html>
