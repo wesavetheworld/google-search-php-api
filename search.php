@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>Search Results</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 
@@ -25,19 +26,19 @@ if(isset($_GET['input']) && $_GET['input'] != "")
 
     function stampa_risultati($q, $start, $limite) {
         $url =  "https://www.googleapis.com/customsearch/v1?q=$q&cx=".$GLOBALS['cx']."&key=".$GLOBALS['gapikey']."&start=$start";
-        $json = file_get_contents($url);
-        $data = json_decode($json, TRUE);
+        $json1 = file_get_contents($url);
+        $array1 = json_decode($json1, TRUE);
         $z=0;
-        if (!empty($data)){
+        if (!empty($array1)){
            
-            foreach($data['items'] as $item) {
+            foreach($array1['items'] as $item) {
                 $m=0;
                 if ($z != $limite) {
                     print '<center>';
                     print  '<h2>'.$item["displayLink"].'</h2>';
                     if (($_GET['emails']=='emails')) {
                         echo '
-                                <table width="50%" border="1">
+                                <table class="resultstable" width="50%" border="1">
                                 <tr>
                                     <th>Address</th>
                                     <th>Type</th>
@@ -88,28 +89,14 @@ if(isset($_GET['input']) && $_GET['input'] != "")
 
 <input type="button" onclick="raccogli()" value="Raccogli" />
 <p id="listo">Gente a cui spedire:</p>
+<input type="buttonjs" name="btnEmail" value="ButtonJS" />
 
-<script>
-function raccogli() {
-	var list=document.getElementsByClassName("sendTo");
-	
-	var i;
-	for (i=0; i<list.length; i++) {
-		document.getElementById("listo").innerHTML += list[i].innerHTML;
-	}
-}
+<label for="emailtest">Insert your email</label>
+<input id="emailtest" type="email" placeholder="your email" />
+<input type="button" name="btnEmail" value="Send test email" />
 
-function activate(str) {
-	var eID = str.id.slice(3);
-	
-	if (str.checked) {
-		document.getElementById(eID.toString()).classList.add("sendTo");
-	} else {
-		document.getElementById(eID.toString()).classList.remove("sendTo");
-	}
-	
-}
-</script>
+<script src="js/main.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js" ></script>
 </body>
 </html>
 

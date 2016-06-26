@@ -5,20 +5,49 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-<center>
-<div id="box">
-<h1>Search:</h1>
-<form method="GET" action="search.php">
-<input class="txtBox" id="query" type="text" placeholder="Funny cat videos..." name="input" required="required" />
-<input class="txtBox" type="number" name="numero" min="1" max="50" step="1" value="5">
-<br />
-<input type="checkbox" name="emails" value="emails"/>Retrieve email addresses</input>
-<br />
-<br />
-<input id="btnSubmit" type="submit" />
+	<center>
+		<div id="box">
+			<h1>Search:</h1>
+			<form method="GET" action="search.php">
+				<input class="txtBox" id="query" type="text" placeholder="Funny cat videos..." name="input" required="required" />
+				<input class="txtBox" type="number" name="numero" min="1" max="50" step="1" value="5">
+				<br />
+				<input type="checkbox" name="emails" value="emails"/>Retrieve email addresses</input>
+				<br />
+				<br />
+				<input id="btnSubmit" type="submit" />
+			</form>
 
-</form>
-</div>
-</center>
+			<br /><br />
+			<table class="resultstable">
+				<tr>
+					<th>ciao</th>
+					<th>email</th>
+					<th>topkek</th>
+					<th>send?</th>
+				</tr>
+				<tr>
+					<td>top</td>
+					<td>topfghfds@æsdssd.roo</td>
+					<td>topasdas</td>
+					<td><input type="checkbox" /></td>
+				</tr>
+				<tr>
+					<td>top</td>
+					<td>topfghfds@æsdssd.roo</td>
+					<td>topasdas</td>
+					<td><input type="checkbox" /></td>
+				</tr>
+				<tr>
+					<td>top</td>
+					<td>topfghfds@æsdssd.roo</td>
+					<td>topasdas</td>
+					<td><input type="checkbox" /></td>
+				</tr>
+			</table>
+		</div>
+	</center>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js" ></script>
+<script src="js/main.js"></script>
 </html>
