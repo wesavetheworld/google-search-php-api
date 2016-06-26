@@ -92,7 +92,19 @@ if(isset($_GET['input']) && $_GET['input'] != "")
 }
 ?>
 
+<button onclick="raccogli()">Raccogli</button>
+<p id="listo">Gente a cui spedire:</p>
+
 <script>
+function raccogli() {
+	var list=document.getElementsByClassName("sendTo");
+	
+	var i;
+	for (i=0; i<list.length; i++) {
+		document.getElementById("listo").innerHTML += list[i].id.toString();
+	}
+}
+
 function activate(str) {
 	var eID = str.id.slice(3);
 	
@@ -101,7 +113,7 @@ function activate(str) {
 	} else {
 		document.getElementById(eID.toString()).classList.remove("sendTo");
 	}
-
+	
 }
 </script>
 </body>
