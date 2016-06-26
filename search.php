@@ -94,8 +94,14 @@ if(isset($_GET['input']) && $_GET['input'] != "")
 
 <script>
 function activate(str) {
-    eID = str.slice(3);
-    alert(eID);
+	var eID = str.id.slice(3);
+	
+	if (str.checked) {
+		document.getElementById(eID.toString()).classList.add("sendTo");
+	} else {
+		document.getElementById(eID.toString()).classList.remove("sendTo");
+	}
+
 }
 </script>
 </body>
