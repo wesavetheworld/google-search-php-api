@@ -1,9 +1,8 @@
 function raccogli() {
 	var list=document.getElementsByClassName("sendTo");
-	alert("topkek");
 	var i;
-	for (i=0; i<list.length; i++) {
-		document.getElementById("listo").innerHTML += list[i].innerHTML;
+	for (i=0; i<=list.length; i++) {
+		console.log(list[i].innerHTML);
 	}
 }
 
@@ -17,4 +16,35 @@ function activate(str) {
 	}
 	
 }
+
+
+$(document).ready(function(){
+    $('#sendTestBtn').click(function () {
+    var i;
+    var strEmails ="";
+    var list=document.getElementsByClassName("sendTo");
+    for (i=0; i<list.length; i++) {
+		 strEmails += list[i].id;
+		 strEmails += "%20";
+	}
+	document.getElementById('emails').value = strEmails;
+    });
+});
+
+
+$('#testEmailBTN').click(function(){
+    $.ajax
+    ({ 
+        url: 'emails.php',
+        data: {"test": "true",
+    			"emails": $('#testEmailTXT').val()
+    			},
+        type: 'post',
+        success: function(result)
+        {
+            $('#testResult').text(result);
+           
+        }
+    });
+});
 

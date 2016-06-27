@@ -17,7 +17,7 @@ h1 {
 }
 
 
-#btnSubmit {
+.btnSubmit {
 	color: black;
 	width: 200px;
 	height: 50px;
@@ -31,10 +31,11 @@ h1 {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
+    margin-bottom:50px;
 }
 
-#btnSubmit:hover {
-	background-color: #36B8E9;
+.btnSubmit:hover {
+	background-color:#44ED7F;  /* #36B8E9;*/
     color: white;
 }
 
@@ -51,7 +52,6 @@ h1 {
 }
 th, td {
     padding: 5px;
-    text-align: left;
 }
 .resultstable tr:nth-child(even) {
     background-color: #eee;
