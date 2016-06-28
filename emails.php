@@ -12,15 +12,24 @@ require('email-config.php');
 			$emailArray = explode("%20", $_POST['emails']);
 			$testEmail=$emailArray[0];
 
-			//sendmail()
-			echo "Email sent to $testEmail";
+			$domain = substr(strrchr($testEmail, "@"), 1);
+
+			$message = str_replace("####1####",date("F j, Y"),$messageTemplate);
+			$message = str_replace("####2####","http://$domain",$message);
+
+			if (mail($testEmail, $subject, $message, $headers))
+            	echo "Mail successfully sent to $testEmail";
+            else
+            	echo "Something went wrong.";
+            
 
 		}
 	}
 	else {
 
+		$_POST['emails']=""; //togliere 
 		if ($_POST['emails'] == "") {
-			echo "There is a problem, no email address selected. Go back and reset all the checkboxes or reload the page.";
+			echo "There is a problem, no email address selected. Go back and reset all the checkboxes or reload the page. ";
 		} else {
 
 
@@ -46,14 +55,23 @@ require('email-config.php');
                              
 
 
-			$emailArray = explode("%20", $_POST['emails']);
+			//$emailArray = explode("%20", $_POST['emails']);
+            $emailArray = array("eugen.saraci@gmail.com", "eugen.saraci@studenti.unipd.it", "hello");
+			array_pop($emailArray);
 			$i = 1;
 			foreach ($emailArray as $value) {
-				#if mail($value,$subject,$message,$headers)
-					echo "<tr><td>$i</td><td>$value</td><td>Sent!</td></tr>";
-				#else //problems
-					//echo "<tr><td>$i</td><td>$value</td><td>Problems!!</td></tr>"; //remove last element from array ==> its empty
 				
+				echo "<tr><td>$i</td><td>$value</td><td>";
+				
+				$domain = substr(strrchr($value, "@"), 1);
+				$message = str_replace("####1####",date("F j, Y"),$messageTemplate);
+				$message = str_replace("####2####","http://$domain",$message);
+
+				if (mail($value, $subject, $message, $headers))
+        			echo "Sent!";
+        		else
+        			echo "Error!";
+				echo "</td></tr>";
 
 				$i++;
 			}

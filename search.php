@@ -57,7 +57,7 @@ if(isset($_GET['input']) && $_GET['input'] != "")
                                     <th>Send?</th>
                                 </tr>';
 
-                        /*$json2 = file_get_contents("https://api.emailhunter.co/v1/search?domain=".preg_replace('#^www\.(.+\.)#i', '$1', $item['displayLink'])."&api_key=".$GLOBALS['mhapikey']);   function getHost will not work with site.co.uk, will return co.uk as host*/
+                        /*$json2 = file_get_contents("https://api.emailhunter.co/v1/search?domain=".preg_replace('#^www\.(.+\.)#i', '$1', $item['displayLink'])."&api_key=".$GLOBALS['mhapikey']);  Be careful function getHost will not work with domains like site.co.uk, it will return co.uk as host*/
 
                         $json2 = file_get_contents("https://api.emailhunter.co/v1/search?domain=".giveHost($item['displayLink'])."&api_key=".$GLOBALS['mhapikey']);
                         $array2 = json_decode($json2, TRUE);
@@ -111,12 +111,13 @@ if(isset($_GET['input']) && $_GET['input'] != "")
 <?php echo '<input type="hidden" name="keywords" value="'.$_GET["input"].'" />' ?>
     <input type="hidden" name="emails" id="emails" value="" />
     <input type="submit" class="btnSubmit" id="sendTestBtn" value="Send Emails!" />
+    <p>This button is disabled to prevent abuses, You can only use the "test"  above this one to send a test Email to your inbox</p>
 </form>
 
 </center>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js" ></script>
-<script src="js/main.js"></script>
+<script src="main.js"></script>
 
 </body>
 </html>
