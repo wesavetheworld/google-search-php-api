@@ -41,7 +41,7 @@ I hope that you can take in considering my proposal and if we think on the same 
 <p>
 I’m looking forwards to receive your reaction, and in the mean time have a nice day.</p>
 
-<b>Didier Dutilleux</b><br />
+<b></b><br />
 </body>
 </html>
 ";
